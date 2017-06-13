@@ -195,14 +195,14 @@ removed FastQ format output files (dual files).
 
 			if (!compressed_flag)
 			{
-				out = new std::ofstream {outputFile+"_paired1.fq"};
-				out_2 = new std::ofstream {outputFile+"_paired2.fq"};
+				out = new std::ofstream {outputFile+"_1.trim.fastq"};
+				out_2 = new std::ofstream {outputFile+"_2.trim.fastq"};
 			}
 
 			else
 			{
-				out = new std::ofstream {outputFile+"_paired1.gz"};
-				out_2 = new std::ofstream {outputFile+"_paired2.gz"};
+				out = new std::ofstream {outputFile+"_1.trim.fastq.gz"};
+				out_2 = new std::ofstream {outputFile+"_2.trim.fastq.gz"};
 
 				out_gzip = new boost::iostreams::filtering_ostream();
 				out_gzip->push(boost::iostreams::gzip_compressor());
